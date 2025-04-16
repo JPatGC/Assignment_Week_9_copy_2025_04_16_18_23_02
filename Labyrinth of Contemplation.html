@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Battery Labyrinth</title>
+
+  <style>
+    /* —— Layout —— */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    header {
+      background: #4CAF50;
+      color: #fff;
+      text-align: center;
+      padding: 1em;
+    }
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .park-info { margin-bottom: 20px; }
+    .map-container {
+      width: 100%;
+      height: 400px;
+      margin-top: 20px;
+    }
+    #park-map {
+      width: 100%;
+      height: 100%;
+      border: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>The Labyrinth of Contemplation</h1>
+  </header>
+
+  <main>
+    <!-- Info -->
+    <div class="park-info">
+      <h2>Location</h2>
+      <p><strong>Address:</strong> Battery Park City</p>
+    </div>
+
+    <!-- Map -->
+    <div class="map-container">
+      <h2>Map</h2>
+      <div id="park-map"></div>
+    </div>
+  </main>
+
+  <script>
+    function initMap() {
+      // coordinates Labyrinth of Contemplation
+  
+      const labyrinth = { lat: 40.70418, lng: -74.01658 };
+
+      const map = new google.maps.Map(document.getElementById('park-map'), {
+        zoom: 16,
+        center: labyrinth,
+      });
+
+      new google.maps.Marker({
+        position: labyrinth,
+        map,
+        title: 'The Labyrinth of Contemplation',
+      });
+    }
+  </script>
+
+</body>
+</html>

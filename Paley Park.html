@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paley Park – Manhattan Pocket Parks</title>
+
+  <!-- site‑wide stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="park-page">
+  <!-- =========  Header / Nav  ========= -->
+  <header class="site-header">
+    <div class="header-content">
+      <h1>Manhattan Pocket Parks</h1>
+      <p class="tagline">Discover Hidden Green Spaces in the Concrete Jungle</p>
+    </div>
+
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="map.html">Park Map</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- =========  Breadcrumb  ========= -->
+  <div class="breadcrumb">
+    <a href="index.html">Home</a> &nbsp;&gt;&nbsp; Paley Park
+  </div>
+
+  <!-- =========  Main Park Detail  ========= -->
+  <main class="park-detail">
+    <h2 class="park-title">Paley Park</h2>
+
+    <section class="park-info">
+      <h3>Location</h3>
+      <p><strong>Address:</strong> 3 East 53rd St, between Madison &amp; Fifth Avenues, New York, NY</p>
+    </section>
+
+    <section class="map-container">
+      <h3>Map</h3>
+      <div id="park-map"></div>
+    </section>
+
+    <section class="park-gallery">
+      <h3>Gallery</h3>
+      <div class="gallery-images">
+        <div class="gallery-image">Gallery Image 1</div>
+        <div class="gallery-image">Gallery Image 2</div>
+        <div class="gallery-image">Gallery Image 3</div>
+      </div>
+    </section>
+
+    <div class="back-home">
+      <a href="index.html">← Back to All Parks</a>
+    </div>
+  </main>
+
+  <!-- =========  Google Maps initialiser  ========= -->
+  <script>
+    function initMap() {
+      const paleyPark = { lat: 40.7603, lng: -73.9751 };
+
+      const map = new google.maps.Map(document.getElementById('park-map'), {
+        zoom: 16,
+        center: paleyPark,
+      });
+
+      new google.maps.Marker({
+        position: paleyPark,
+        map,
+        title: 'Paley Park',
+      });
+    }
+  </script>
+
+</body>
+</html>

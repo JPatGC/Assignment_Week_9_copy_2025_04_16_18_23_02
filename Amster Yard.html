@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amster Yard</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #4CAF50;
+      color: #fff;
+      text-align: center;
+      padding: 1em;
+    }
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .park-info {
+      margin-bottom: 20px;
+    }
+    .map-container {
+      width: 100%;
+      height: 400px;
+      margin-top: 20px;
+    }
+    #park-map {
+      width: 100%;
+      height: 100%;
+      border: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Amster Yard</h1>
+  </header>
+
+  <main>
+    <div class="park-info">
+      <h2>Park Location</h2>
+      <p><strong>Address:</strong> East 49th St&nbsp;between Second & Third Avenues</p>
+    </div>
+
+    <div class="map-container">
+      <h2>Map</h2>
+      <div id="park-map"></div>
+    </div>
+  </main>
+
+  <script>
+    function initMap() {
+      // Coordinates
+      const amsterYard = { lat: 40.75543, lng: -73.97041 };
+
+      // Create map
+      const map = new google.maps.Map(document.getElementById("park-map"), {
+        zoom: 16,
+        center: amsterYard,
+      });
+
+      // Add marker
+      new google.maps.Marker({
+        position: amsterYard,
+        map,
+        title: "Amster Yard",
+      });
+    }
+  </script>
+
+</body>
+</html>

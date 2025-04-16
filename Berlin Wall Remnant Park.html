@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Berlin Wall Remnant Park</title>
+
+  <style>
+  
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    header {
+      background: #4CAF50;
+      color: #fff;
+      text-align: center;
+      padding: 1em;
+    }
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* map + info */
+    .park-info { margin-bottom: 20px; }
+    .map-container {
+      width: 100%;
+      height: 400px;
+      margin-top: 20px;
+    }
+    #park-map {
+      width: 100%;
+      height: 100%;
+      border: 1px solid #ddd;
+    }
+
+    /* Gallery */
+    .park-gallery { margin-top: 40px; }
+    .gallery-images {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .gallery-image {
+      flex: 1 1 120px;
+      height: 80px;
+      background: #e0e0e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+    }
+
+    .back-home {
+      margin-top: 40px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Berlin Wall Remnant Park</h1>
+  </header>
+
+  <main>
+    <!-- Park info -->
+    <div class="park-info">
+      <h2>Park Location</h2>
+      <p><strong>Address:</strong> 520 Madison Avenue, New York, NY</p>
+    </div>
+
+    <!-- Embedded map -->
+    <div class="map-container">
+      <h2>Map</h2>
+      <div id="park-map"></div>
+    </div>
+
+    <!-- Gallery section (placeholder tiles) -->
+    <div class="park-gallery">
+      <h3>Gallery</h3>
+      <div class="gallery-images">
+        <div class="gallery-image">Image 1</div>
+        <div class="gallery-image">Image 2</div>
+        <div class="gallery-image">Image 3</div>
+      </div>
+    </div>
+
+
+    <!-- Back‑to‑all link -->
+    <div class="back-home">
+      <a href="index.html">← Back to All Parks</a>
+    </div>
+  </main>
+
+  <script>
+    /* Google Maps initialiser */
+    function initMap() {
+      const park = { lat: 40.76026, lng: -73.97463 }; // Berlin Wall Remnant
+
+      const map = new google.maps.Map(document.getElementById('park-map'), {
+        zoom: 16,
+        center: park,
+      });
+
+      new google.maps.Marker({
+        position: park,
+        map,
+        title: 'Berlin Wall Remnant Park',
+      });
+    }
+  </script>
+
+</body>
+</html>
