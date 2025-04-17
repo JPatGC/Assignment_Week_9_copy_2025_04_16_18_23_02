@@ -5,6 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Park Map - Manhattan Pocket Parks</title>
     <link rel="stylesheet" href="style.css" />
+    <head>
+      …
+      <link rel="stylesheet" href="style.css" />
+    
+      <!-- ① paste Leaflet CSS here -->
+      <!-- Leaflet CSS -->
+<link rel="stylesheet"
+href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+crossorigin="" />
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+  crossorigin=""></script>
+
+    
+      <!-- ② paste Leaflet JS here -->
+      …(as above)…
+    </head>
+    
   </head>
   <body class="map-page">
     <header class="site-header">
@@ -116,13 +137,7 @@
       </div>
     </main>
 
-    <!-- Google Maps JavaScript API -->
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAerSEUeXfit4XsqYQ7qQy1Ck0agbq1gDU&callback=initMap"
-      async
-      defer
-    ></script>
-
+   
     <!-- Custom JavaScript for the map -->
     <script src="map.js"></script>
   </body>
